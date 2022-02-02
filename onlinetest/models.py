@@ -4,12 +4,13 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from datetime import datetime
 from django.core.validators import MaxValueValidator, MinValueValidator
-from tinymce.models import HTMLField
 from bs4 import BeautifulSoup
-
+from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 
 class Question(models.Model):
-    title = HTMLField()
+    title = models.CharField(max_length=200)
+    description = RichTextUploadingField(blank=True, null=True)
     image = models.ImageField(upload_to="question_images/", null=True, blank=True)
 
     def __str__(self):

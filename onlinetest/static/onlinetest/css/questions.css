@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Share:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Share:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Schoolbell&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap");
 
 body {
   background-position: center;
@@ -16,7 +16,7 @@ body {
 }
 
 .card-heading {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", "sans-serif";
   text-align: left;
   color: white;
   margin: 7px;
@@ -25,7 +25,7 @@ body {
   padding-top: 3px;
   padding-bottom: 3px;
   padding-right: 3px;
-  word-spacing: 0.30em;
+  word-spacing: 0.3em;
 }
 
 .card {
@@ -39,7 +39,7 @@ body {
 
 .card-body {
   padding: 10px;
-  font-family: 'Slackey';
+  font-family: "Slackey";
 }
 
 /* Set the font size for the textarea */
@@ -49,7 +49,7 @@ body {
 }
 
 textarea {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   /*   resize: none; */
   opacity: 0.7;
   font-size: 1.5em;
@@ -62,7 +62,7 @@ textarea {
 
 .msg-btn {
   margin-top: 25px;
-  background-color: #CCFFE5;
+  background-color: #ccffe5;
   color: black;
 }
 
@@ -86,7 +86,7 @@ textarea {
   border-radius: 10%;
   font-family: "Slackey", "cursive";
   position: sticky !important;
-  top:10% !important;
+  top: 10% !important;
   margin-bottom: 1em !important;
 }
 
@@ -103,7 +103,7 @@ textarea {
   display: inline-flex;
 }
 
-@media (max-width:600px) {
+@media (max-width: 600px) {
   #countdown .canvas-container {
     max-width: 420px;
   }
@@ -123,7 +123,7 @@ textarea {
   }
 }
 
-@media (min-width:1600px) {
+@media (min-width: 1600px) {
   div.sticky {
     position: -webkit-sticky;
     position: sticky;
@@ -138,4 +138,11 @@ textarea {
 
 body {
   overflow-x: hidden !important;
+}
+
+#description * {
+  font-size: 2 em !important;
+  font-family: "Raleway", "sans-serif" !important;
+  color: white !important;
+  background-color: transparent !important;
 }

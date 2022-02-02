@@ -20,6 +20,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
     path('auth/', include('social_django.urls', namespace='social')),
     path('', include('onlinetest.urls')),
     path('tinymce/', include('tinymce.urls')),

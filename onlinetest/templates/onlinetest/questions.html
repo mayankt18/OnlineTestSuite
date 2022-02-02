@@ -1,7 +1,7 @@
 {% extends 'onlinetest/base.html' %} {% block content %} {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'onlinetest/css/questions.css' %}">
 
-</style>
+
 <div style="width: 100vw; z-index: 950; position: sticky; display: flex; justify-content: center;">
     <div class="sticky" id="countdown">
         <p>Time Left</p>
@@ -19,7 +19,13 @@
     <div class="row" id="q{{ question.id }}">
         <div class="card">
 
-            <h2 class="card-heading" style="font-size: 1em !important;">{{ question.title | safe }}</h2>
+            <h1 class="card-heading" id="title">
+                {{ question.title | safe }}</h1>
+            <div class="card-body" id="description">
+                {{question.description|safe}}
+            </div>
+
+
             <div class="card-body">
                 <form method="POST" action="{{ '/answers' }}/{{ question.id }}">
                     {% csrf_token %}
@@ -64,7 +70,7 @@
 <script src="{% static 'onlinetest/js/jquery.toast.min.js' %}"></script>
 
 <script>
-    var t_left = {{ time_left }};
+    var t_left = `{{ time_left }}`;
     console.log(t_left);
     var init_time = parseInt(t_left); // for timer element
     var tleft = parseInt(t_left); // for updating timer
@@ -88,7 +94,7 @@
             loaderBg: '#5265F5',
         });
 
-        sessionStorage.setItem('show_instruction',true);
+        sessionStorage.setItem('show_instruction', true);
     }
 
     checkForToast = () => {
