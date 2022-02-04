@@ -9,6 +9,7 @@ body {
   height: 100%;
   color: #ffffff;
   overflow: hidden !important;
+  /* backdrop-filter: blur(4px); */
 }
 
 /* .navbar {
@@ -172,11 +173,14 @@ html {
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
-html #background, body #background {
+html #background,
+body #background {
   position: relative;
   top: 50%;
   left: 50%;
@@ -194,7 +198,8 @@ html #background, body #background {
   filter: blur(5px);
 }
 
-html .main, body .main {
+html .main,
+body .main {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -204,7 +209,8 @@ html .main, body .main {
   transform: translate(-50%, -50%);
 }
 
-html .main #content, body .main #content {
+html .main #content,
+body .main #content {
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
@@ -215,7 +221,8 @@ html .main #content, body .main #content {
   top: 33%;
 }
 
-html .main #content .title, body .main #content .title {
+html .main #content .title,
+body .main #content .title {
   color: white;
   font-family: "Slackey", "cursive";
   font-size: 4rem;
@@ -224,12 +231,14 @@ html .main #content .title, body .main #content .title {
   margin-bottom: 0px;
 }
 
-html .main #content .title span, body .main #content .title span {
+html .main #content .title span,
+body .main #content .title span {
   font-size: 4rem;
   cursor: pointer;
 }
 
-html .main #content .title:hover, body .main #content .title:hover {
+html .main #content .title:hover,
+body .main #content .title:hover {
   -webkit-animation: MISSION-HOVER 1.5s infinite;
   animation: MISSION-HOVER 1.5s infinite;
   -webkit-animation-direction: alternate;
@@ -239,7 +248,8 @@ html .main #content .title:hover, body .main #content .title:hover {
 }
 
 @-webkit-keyframes MISSION-HOVER {
-  0%, 100% {
+  0%,
+  100% {
     font-size: 4rem;
     color: white;
   }
@@ -250,7 +260,8 @@ html .main #content .title:hover, body .main #content .title:hover {
   }
 }
 
-html .main #content p, body .main #content p {
+html .main #content p,
+body .main #content p {
   color: #e6dbae;
   font-family: "Slackey", "cursive";
   font-size: 1.5rem;
@@ -260,7 +271,8 @@ html .main #content p, body .main #content p {
   text-transform: uppercase;
 }
 
-html .main #content p:last-child, body .main #content p:last-child {
+html .main #content p:last-child,
+body .main #content p:last-child {
   font-size: 0.75rem;
   font-weight: 700;
   margin: 3em auto;
@@ -268,17 +280,20 @@ html .main #content p:last-child, body .main #content p:last-child {
   letter-spacing: 0.1rem;
 }
 
-html .main #content p:last-child>a, body .main #content p:last-child>a {
+html .main #content p:last-child > a,
+body .main #content p:last-child > a {
   text-decoration: none;
   color: inherit;
   transition: all 0.2s ease-in;
 }
 
-html .main #content p:last-child>a:hover, body .main #content p:last-child>a:hover {
+html .main #content p:last-child > a:hover,
+body .main #content p:last-child > a:hover {
   color: #fff;
 }
 
-html .main #content section, body .main #content section {
+html .main #content section,
+body .main #content section {
   color: #fff;
   margin: 0 auto;
   line-height: 24px;
@@ -286,30 +301,34 @@ html .main #content section, body .main #content section {
   font-weight: 700;
 }
 
-html .main #content section ul, body .main #content section ul {
+html .main #content section ul,
+body .main #content section ul {
   list-style-type: none;
   margin-bottom: 0;
   margin-left: 0;
 }
 
-html .main #content section ul li, body .main #content section ul li {
+html .main #content section ul li,
+body .main #content section ul li {
   display: inline-block;
   margin-right: 2rem;
   width: 6rem;
 }
 
-html .main #content section .timenumbers, body .main #content section .timenumbers {
+html .main #content section .timenumbers,
+body .main #content section .timenumbers {
   display: block;
   font-size: 1.3rem;
   font-weight: 400;
   line-height: 1.5rem;
   margin: 0 auto;
   text-align: center;
-  font-family: 'Slackey', 'cursive';
+  font-family: "Slackey", "cursive";
   color: aquamarine;
 }
 
-html .main #content section p.timedescription, body .main #content section p.timedescription {
+html .main #content section p.timedescription,
+body .main #content section p.timedescription {
   font-size: 0.5rem;
   font-variant: small-caps;
   line-height: 1.5rem;
@@ -366,7 +385,7 @@ html .main #content section p.timedescription, body .main #content section p.tim
 .gplogin span {
   text-align: center;
   margin-left: 15%;
-  font-size: .9em;
+  font-size: 0.9em;
   font-family: "Slackey", "cursive";
   font-weight: 700;
   font-style: italic;
@@ -378,7 +397,8 @@ html .main #content section p.timedescription, body .main #content section p.tim
   font-size: 1rem;
 }
 
-.offset:hover, .offset:focus {
+.offset:hover,
+.offset:focus {
   box-shadow: 0 0 0 0 var(--hover), inset 6em 3.5em 0 0 var(--hover);
 }
 
@@ -392,7 +412,8 @@ button {
   transition: 0.25s;
 }
 
-button:hover, button:focus {
+button:hover,
+button:focus {
   border-color: var(--hover);
   color: #fff;
 }

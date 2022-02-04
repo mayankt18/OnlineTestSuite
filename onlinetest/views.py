@@ -1,3 +1,4 @@
+from unicodedata import category
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
@@ -81,7 +82,15 @@ def questions(req):
             question.answer = None
 
     name = profile.full_name
-    ctx = {'questions': questions, 'user': name, 'time_left': time_left, 'image': profile.image}
+    easy_questions = Question.objects.filter(category="EASY")
+    medium_questions = Question.objects.filter(category="MEDIUM")
+    hard_questions = Question.objects.filter(category="HARD")
+    categorised_questions = {
+        'easy': easy_questions,
+        'medium': medium_questions,
+        'hard': hard_questions
+    }
+    ctx = {'questions': categorised_questions, 'user': name, 'time_left': time_left, 'image': profile.image}
     return render(req, 'onlinetest/questions.html', ctx)
 
 

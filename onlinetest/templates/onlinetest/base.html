@@ -33,8 +33,9 @@
 </style>
 
 <body
-    style="background-image: url('{% static 'onlinetest/bg2.jpg' %}'); background-attachment: fixed;background-position: center;background-repeat: no-repeat;background-size: cover;">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky py-0">
+    style="background-image: url('{% static 'onlinetest/bg3.png' %}'); background-attachment: fixed;background-position: center;background-repeat: no-repeat;background-size: cover;">
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky py-0">
         <a class="navbar-brand" href="/"><img src="{% static 'onlinetest/jcclogo.png' %}" alt="logo" width="45"
                 class="d-inline-block align-top"></a>
         {% if not user.is_anonymous %}
@@ -62,6 +63,7 @@
         integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
         crossorigin="anonymous"></script>
     {% block content %} {% endblock %}
+
 </body>
 
 

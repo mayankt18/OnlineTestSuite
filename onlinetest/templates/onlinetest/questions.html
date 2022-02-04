@@ -15,47 +15,26 @@
 </div>
 
 <div class="container">
-    {% for question in questions %}
-    <div class="row" id="q{{ question.id }}">
-        <div class="card">
-
-            <h1 class="card-heading" id="title">
-                {{ question.title | safe }}</h1>
-            <div class="card-body" id="description">
-                {{question.description|safe}}
-            </div>
-
-
-            <div class="card-body">
-                <form method="POST" action="{{ '/answers' }}/{{ question.id }}">
-                    {% csrf_token %}
-                    {% if question.image %}
-                    <div style="display: flex; justify-content: center;">
-                        <img src="{{ question.image.url }}" class="img-thumbnail" style="width: 300px; height: 300px;">
-                    </div>
-                    {% endif %}
-                    <br /> {% if question.answer %}
-                    <textarea rows="6" class="form-control" name="text"
-                        placeholder="Type your answer here ...">{{ question.answer }}</textarea> {% else %}
-                    <textarea rows="6" class="form-control" name="text"
-                        placeholder="Type your answer here ..."></textarea> {% endif %}
-                    <span class="a">
-                        <button type="submit" class="btn btn-dark submit-btn">Submit Answer</button></span>
-                    <span class="a">
-                        {% if messages %}
-                        {% for msg in messages %}
-                        {% if question.id|stringformat:"i" == msg.message|slice:"-1:"|first %}
-                        <p class="btn btn-light msg-btn">{{ msg.message|slice:"-2" }}</p>
-                        {% endif %}
-                        {% endfor %}
-                        {% endif %}
-                    </span>
-                </form>
-
-            </div>
-        </div>
+    <div class="category easy">
+        <h1 class="category-heading">Category: Easy</h1>
+        {% for question in questions.easy %}
+        {% include 'onlinetest/question_layout.html' %}
+        {% endfor %}
     </div>
-    <br> {% endfor %}
+    <div class="category medium">
+        <h1 class="category-heading">Category: Medium</h1>
+        {% for question in questions.medium %}
+        {% include 'onlinetest/question_layout.html' %}
+        {% endfor %}
+    </div>
+    <div class="category hard">
+        <h1 class="category-heading">Category: Hard</h1>
+        {% for question in questions.hard %}
+        {% include 'onlinetest/question_layout.html' %}
+        {% endfor %}
+    </div>
+
+
     <div class="text-center">
         <a href="{{ '/finish/' }}" class="btn finish-btn">Finish</a>
     </div>

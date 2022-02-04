@@ -8,10 +8,19 @@ from bs4 import BeautifulSoup
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 
+
+
+CATEGORY_CHOICES = (
+    ('EASY', 'Easy'),
+    ('MEDIUM', 'Medium'),
+    ('HARD', 'Hard'),
+)
+
 class Question(models.Model):
     title = models.CharField(max_length=200)
     description = RichTextUploadingField(blank=True, null=True)
     image = models.ImageField(upload_to="question_images/", null=True, blank=True)
+    category = models.CharField(choices=CATEGORY_CHOICES, max_length=10, blank=True)
 
     def __str__(self):
         return BeautifulSoup(self.title).get_text()
