@@ -1,6 +1,6 @@
 version: "3.8"
 
-services: 
+services:
   db:
     image: postgres:12
     restart: always
@@ -8,13 +8,13 @@ services:
       - .env
     volumes:
       - postgres_data:/var/lib/postgresql/data
-    
+
   server:
-    build: 
+    build:
       context: ./
       dockerfile: Dockerfile
     container_name: onlinetestsuite
-    depends_on: 
+    depends_on:
       - db
     command: >
       bash -c "python manage.py makemigrations &&
@@ -34,19 +34,6 @@ services:
         max_attempts: 3
         window: 120s
 
-  nginx:
-    build:
-      context: ./nginx
-      dockerfile: Dockerfile
-    ports:
-      - "80:80"
-    volumes:
-      - ./static:/ots/static
-      - ./media:/ots/media
-    depends_on: 
-      - server
-    restart: always
 
 volumes:
-  postgres_data:   
-    
+  postgres_data:
