@@ -2,46 +2,55 @@
 <link rel="stylesheet" type="text/css" href="{% static 'onlinetest/css/questions.css' %}">
 
 
-<div style="width: 100vw; z-index: 950; position: sticky; display: flex; justify-content: center;">
-    <div class="sticky" id="countdown">
-        <p>Time Left</p>
-        <div class="canvas-container" style="display: flex; align-items: center;">
-            <canvas id="hours" style="padding: 0.25em;"></canvas>
-            <canvas id="minutes" style="padding: 0.25em;"></canvas>
-            <canvas id="seconds" style="padding: 0.25em;"></canvas>
+<div class="row">
+    <div class="col-lg-2 align-items-end">
+        <div style="z-index: 950; position: sticky; display: flex; justify-content: center;top:0;">
+            <div class="sticky" id="countdown">
+                <p>Time Left</p>
+                <div class="canvas-container" style="display: flex; align-items: center;">
+                    <canvas id="hours" style="padding: 0.20em;"></canvas>
+                    <canvas id="minutes" style="padding: 0.20em;"></canvas>
+                    <canvas id="seconds" style="padding: 0.20em;"></canvas>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-</div>
-
-<div class="container">
-    <div class="category easy">
-        <h1 class="category-heading">Category: Easy</h1>
-        {% for question in questions.easy %}
-        {% include 'onlinetest/question_layout.html' %}
-        {% endfor %}
-    </div>
-    <div class="category medium">
-        <h1 class="category-heading">Category: Medium</h1>
-        {% for question in questions.medium %}
-        {% include 'onlinetest/question_layout.html' %}
-        {% endfor %}
-    </div>
-    <div class="category hard">
-        <h1 class="category-heading">Category: Hard</h1>
-        {% for question in questions.hard %}
-        {% include 'onlinetest/question_layout.html' %}
-        {% endfor %}
-    </div>
+    <div class="col-lg-10 align-content-start text-start">
+        <div class="container">
+            <div class="category easy">
+                <h1 class="category-heading">Category: Easy</h1>
+                {% for question in questions.easy %}
+                {% include 'onlinetest/question_layout.html' %}
+                {% endfor %}
+            </div>
+            <div class="category medium">
+                <h1 class="category-heading">Category: Medium</h1>
+                {% for question in questions.medium %}
+                {% include 'onlinetest/question_layout.html' %}
+                {% endfor %}
+            </div>
+            <div class="category hard">
+                <h1 class="category-heading">Category: Hard</h1>
+                {% for question in questions.hard %}
+                {% include 'onlinetest/question_layout.html' %}
+                {% endfor %}
+            </div>
 
 
-    <div class="text-center">
-        <a href="{{ '/finish/' }}" class="btn finish-btn">Finish</a>
+            <div class="text-center">
+                <a href="{{ '/finish/' }}" class="btn finish-btn">Finish</a>
+            </div>
+            <br>
+            <br><br><br><br><br>
+            {% include 'components/footer.html' %}
+        </div>
+
     </div>
-    <br>
-    <br><br><br><br><br>
-    {% include 'components/footer.html' %}
 </div>
+
+
+</div>
+
 
 
 <script src="{% static 'onlinetest/js/main.js' %}"></script>
